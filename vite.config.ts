@@ -6,6 +6,7 @@ import {VitePWA} from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
   return {
+    base:'/ArthaLedger1/',
     plugins: [
       react(),
       tailwindcss(),
@@ -13,7 +14,7 @@ export default defineConfig(() => {
         registerType: 'autoUpdate',
         includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'icon.svg'],
         manifest: {
-          id: '/',
+          id: '/ArthaLedger1/',
           name: 'ArthaLedger — BOI Statement & UPI Analyzer',
           short_name: 'ArthaLedger',
           description:
@@ -21,8 +22,8 @@ export default defineConfig(() => {
           theme_color: '#0B192C',
           background_color: '#F8FAFC',
           display: 'standalone',
-          start_url: '/',
-          scope: '/',
+          start_url: '/ArthaLedger1/',
+          scope: '/ArthaLedger1/',
           icons: [
             {
               src: '/pwa-192x192.png',
@@ -37,7 +38,7 @@ export default defineConfig(() => {
               purpose: 'any',
             },
             {
-              src: '/pwa-maskable-512x512.png',
+              src: 'pwa-maskable-512x512.png',
               sizes: '512x512',
               type: 'image/png',
               purpose: 'maskable',
