@@ -1,0 +1,52 @@
+{
+  "packageId": "com.arthaledger.boianalyzer",
+  "host": "ais-pre-svjaydfcd433bqpwvr75y2-967070040423.asia-east1.run.app",
+  "name": "ArthaLedger — BOI Statement & UPI Analyzer",
+  "launcherName": "ArthaLedger",
+  "display": "standalone",
+  "themeColor": "#0B192C",
+  "navigationColor": "#0B192C",
+  "navigationColorDark": "#020617",
+  "navigationDividerColor": "#1E293B",
+  "navigationDividerColorDark": "#1E293B",
+  "backgroundColor": "#F8FAFC",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://ais-pre-svjaydfcd433bqpwvr75y2-967070040423.asia-east1.run.app/pwa-512x512.png",
+  "maskableIconUrl": "https://ais-pre-svjaydfcd433bqpwvr75y2-967070040423.asia-east1.run.app/pwa-maskable-512x512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./android-keystore.jks",
+    "alias": "arthaledger-key"
+  },
+  "appVersionName": "1.2.0",
+  "appVersionCode": 12,
+  "shortcuts": [
+    {
+      "name": "Import BOI Statement",
+      "shortName": "Import PDF",
+      "url": "https://ais-pre-svjaydfcd433bqpwvr75y2-967070040423.asia-east1.run.app/?tab=statements",
+      "chosenIconUrl": "https://ais-pre-svjaydfcd433bqpwvr75y2-967070040423.asia-east1.run.app/pwa-192x192.png"
+    },
+    {
+      "name": "Overview Dashboard",
+      "shortName": "Dashboard",
+      "url": "https://ais-pre-svjaydfcd433bqpwvr75y2-967070040423.asia-east1.run.app/",
+      "chosenIconUrl": "https://ais-pre-svjaydfcd433bqpwvr75y2-967070040423.asia-east1.run.app/pwa-192x192.png"
+    }
+  ],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://ais-pre-svjaydfcd433bqpwvr75y2-967070040423.asia-east1.run.app/manifest.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://ais-pre-svjaydfcd433bqpwvr75y2-967070040423.asia-east1.run.app/",
+  "minSdkVersion": 24,
+  "orientation": "portrait",
+  "fingerprints": []
+}
