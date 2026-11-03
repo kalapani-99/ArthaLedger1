@@ -1034,7 +1034,6 @@ interface StatementManagerViewProps {
   activePreview: StatementImportPreview | null;
   isParsing: boolean;
   onSelectFileForPreview: (file: File) => Promise<void>;
-  onLoadOptionalSampleBoiPdf: () => Promise<void>;
   onRemapColumns: (newMapping: StatementColumnMapping) => void;
   onToggleCandidateRow: (rowIndex: number, selected: boolean) => void;
   onConfirmImportPreview: (targetAccountId: string) => void;
@@ -1047,7 +1046,6 @@ export const StatementManagerView: React.FC<StatementManagerViewProps> = ({
   activePreview,
   isParsing,
   onSelectFileForPreview,
-  onLoadOptionalSampleBoiPdf,
   onRemapColumns,
   onToggleCandidateRow,
   onConfirmImportPreview,
@@ -1118,16 +1116,6 @@ export const StatementManagerView: React.FC<StatementManagerViewProps> = ({
                 }}
               />
             </label>
-
-            <button
-              type="button"
-              disabled={isParsing}
-              onClick={onLoadOptionalSampleBoiPdf}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-amber-300 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/50 text-amber-900 dark:text-amber-200 text-xs sm:text-sm font-medium cursor-pointer"
-            >
-              <FileSpreadsheet className="w-4 h-4 text-amber-600" />
-              Preview Optional Sample BOI Statement (Tanmay 62-Txn PDF)
-            </button>
           </div>
         </div>
       )}

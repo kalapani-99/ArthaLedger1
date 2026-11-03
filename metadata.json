@@ -1,6 +1,0 @@
-{
-  "name": "ArthaLedger — Bank of India Statement & UPI Budget Analyzer",
-  "description": "Upload Bank of India PDF, CSV, or Excel statements to automatically extract UPI sender/receiver names, track credits vs. debits, reconcile person-to-person ledgers, monitor monthly category budgets, and detect recurring subscriptions.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}

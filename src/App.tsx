@@ -240,36 +240,6 @@ export default function App() {
     }
   };
 
-  const handleLoadOptionalSampleBoiPdf = async () => {
-    setIsParsingStatement(true);
-    try {
-      const response = await fetch('/assets/aistudio/unlocked_b9c97e4d.pdf');
-      const arrayBuf = await response.arrayBuffer();
-      const uint8 = new Uint8Array(arrayBuf);
-      const preview = await prepareStatementImportPreview(
-        {
-          fileName: 'unlocked_b9c97e4d.pdf',
-          fileSizeBytes: uint8.byteLength,
-          fileBuffer: uint8,
-        },
-        snapshot.transactions,
-        snapshot.statements,
-        'Bank of India Savings Account'
-      );
-      setActiveImportPreview(preview);
-      setActiveTab('statements');
-      showToast(
-        `Parsed ${preview.candidates.length} rows from Sample BOI PDF. Review and click "Confirm & Save" to import.`
-      );
-    } catch (err) {
-      showToast(
-        `Failed to load sample BOI PDF: ${err instanceof Error ? err.message : 'Error'}`
-      );
-    } finally {
-      setIsParsingStatement(false);
-    }
-  };
-
   const handleRemapColumns = async (newMapping: StatementColumnMapping) => {
     if (!lastUploadFileRef) return;
     const arrayBuf = await lastUploadFileRef.arrayBuffer();
@@ -700,7 +670,6 @@ export default function App() {
                 metrics={dashboardMetrics}
                 comparison={periodComparison}
                 onOpenImportModal={() => setActiveTab('statements')}
-                onLoadOptionalSampleBoiPdf={handleLoadOptionalSampleBoiPdf}
                 isLoadingSample={isParsingStatement}
                 onNavigateTab={(t) => setActiveTab(t as ActiveWorkspaceTab)}
                 onSelectCategoryFilter={(cat) => {
@@ -879,7 +848,6 @@ export default function App() {
                 activePreview={activeImportPreview}
                 isParsing={isParsingStatement}
                 onSelectFileForPreview={handleSelectFileForPreview}
-                onLoadOptionalSampleBoiPdf={handleLoadOptionalSampleBoiPdf}
                 onRemapColumns={handleRemapColumns}
                 onToggleCandidateRow={(rowIndex, selected) => {
                   if (!activeImportPreview) return;

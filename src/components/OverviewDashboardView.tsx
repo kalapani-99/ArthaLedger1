@@ -24,7 +24,6 @@ interface OverviewDashboardViewProps {
   metrics: DashboardMetrics;
   comparison: PeriodComparison;
   onOpenImportModal: () => void;
-  onLoadOptionalSampleBoiPdf: () => Promise<void>;
   isLoadingSample: boolean;
   onNavigateTab: (tab: string) => void;
   onSelectCategoryFilter: (category: string) => void;
@@ -39,7 +38,6 @@ export const OverviewDashboardView: React.FC<OverviewDashboardViewProps> = ({
   metrics,
   comparison,
   onOpenImportModal,
-  onLoadOptionalSampleBoiPdf,
   isLoadingSample,
   onNavigateTab,
   onSelectCategoryFilter,
@@ -147,21 +145,6 @@ export const OverviewDashboardView: React.FC<OverviewDashboardViewProps> = ({
               >
                 <Plus className="w-4 h-4" />
                 <span>Add Transaction</span>
-              </button>
-
-              <button
-                type="button"
-                data-testid="load-optional-sample-btn"
-                disabled={isLoadingSample}
-                onClick={onLoadOptionalSampleBoiPdf}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 font-medium text-sm transition-colors cursor-pointer disabled:opacity-50 whitespace-nowrap shrink-0"
-              >
-                <FileSpreadsheet className="w-4 h-4 text-slate-400" />
-                <span>
-                  {isLoadingSample
-                    ? 'Parsing Statement...'
-                    : 'Preview Sample BOI Statement (62 Txns)'}
-                </span>
               </button>
             </div>
           </div>
